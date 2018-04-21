@@ -137,8 +137,8 @@ func main() {
 
 	urlFmt := "https://www.toutiao.com/search_content/?offset=%d&format=json&keyword=%E5%8C%BA%E5%9D%97%E9%93%BE&autoload=true&count=20&cur_tab=1&from=search_tab"
 	for i := 0; i <= 10; i += 20 {
-		fmt.Println(fmt.Sprintf(urlFmt, i))
-		err = c.Visit(urlFmt)
+		searchURL := fmt.Sprintf(urlFmt, i)
+		err = c.Visit(searchURL)
 		if err != nil {
 			fmt.Println("vist coins all error:", err)
 		}
